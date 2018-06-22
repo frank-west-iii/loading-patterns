@@ -1,8 +1,12 @@
 import React from "react";
 
-export const Widgets = ({ data: { widgets } }) => (
+export const Widgets = ({ data: { loading, widgets = [] } }) => (
   <div>
     <h1>Widgets</h1>
-    {widgets.map(widget => <div key={widget.id}>{widget.name}</div>)}
+    {loading ? (
+      <div>Loading</div>
+    ) : (
+      widgets.map(widget => <div key={widget.id}>{widget.name}</div>)
+    )}
   </div>
 );
