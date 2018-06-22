@@ -1,24 +1,25 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This repo is a playground to work on loading states for react components powered by apollo
 
-Things you may want to cover:
+It has a loading pattern per branch.
 
-* Ruby version
 
-* System dependencies
+## Setup
 
-* Configuration
+```
+docker-compose up -d
+yarn
+bundle
+rails db:setup
+```
 
-* Database creation
+## Running
 
-* Database initialization
+```
+# Console 1
+rails s
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Console 2
+./bin/webpack-dev-server
+```
