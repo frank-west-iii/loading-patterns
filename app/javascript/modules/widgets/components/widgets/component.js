@@ -1,8 +1,18 @@
 import React from "react";
 
-export const Widgets = ({ data: { widgets } }) => (
+import { Loading } from "shared/components/loading";
+
+const LoadableContent = ({ loading, render }) =>
+  loading ? <Loading /> : render();
+
+export const Widgets = ({ data: { loading, widgets } }) => (
   <div>
     <h1>Widgets</h1>
-    {widgets.map(widget => <div key={widget.id}>{widget.name}</div>)}
+    <LoadableContent
+      loading={loading}
+      render={() =>
+        widgets.map(widget => <div key={widget.id}>{widget.name}</div>)
+      }
+    />
   </div>
 );
